@@ -1,0 +1,102 @@
+<div class="heighthome100">
+    <div class="topsectionheight">
+        <mat-toolbar class="position-fixed">
+            <div class="dvwdth">
+                <span>Dashboard >> {{ userinfo?.firstname }}</span>
+                <span *ngIf="userinfo?.firstname" (click)="logout($event)" class="icnend">
+                    <mat-icon>input</mat-icon>
+                </span>
+            </div>
+        </mat-toolbar>
+    </div>
+
+    <div class="maincss">
+        <mat-horizontal-stepper>
+            <mat-step>
+                    <ng-template matStepLabel>All Users</ng-template>
+                    <div class="row kjgfkghj" >
+                        <mat-card class="wfrwewe" *ngIf="allUsersList?.length">
+                         <div class="row" style="width: -webkit-fill-available;height: 97%;">
+                            <table   class="trhythyt">
+                                <thead>
+                                <tr class="tb-row">
+                                    <th class="nbnhn"><span class="fntSyl">S.no</span></th>
+                                    <th class="nbnhn"><span class="fntSyl">Name</span></th>
+                                    <th class="nbnhn"><span class="fntSyl">createdAt</span></th>
+                                    <th class="nbnhn"><span class="fntSyl">Action</span></th>
+                                </tr>
+                                </thead>
+                            <tbody id="deatils">
+                                <tr  class="tb-row hovera" *ngFor="let i of allUsersList;let j = index">
+                                    <td class="brtytr">{{j + 1}}</td>
+                                    <td class="brtytr">{{i?.firstname ? i?.firstname : '---'}}</td>
+                                    <td class="brtytr">{{i?.created_at ? i?.created_at : '---'}}</td>
+                                    <td class="brtytr">
+                                        <button (click)="navToTopics(i)" mat-raised-button color="accent">ViewTopics</button>
+                                    </td>
+                                </tr>
+                
+                            </tbody>
+                            </table>
+                        </div>
+                
+                        
+                        <div class="dsdfhksjaf" >
+                            <span *ngIf="start > 4" class="ghtyrytr mousepoint" (click)="previousRecords()"> << Previous</span>
+                            <span *ngIf="start > 4" class="ergsfdsd">|</span>
+                            <span *ngIf="allUsersList?.length === 5" class="ergsfdsd ghtyrytr mousepoint" (click)="nextRecords()">Next >></span>
+                        </div>
+                     
+                        </mat-card>
+                
+                        <mat-card class="wfrwewe" *ngIf="!allUsersList?.length"> 
+                          
+                          <img style="padding-top: 77px;width: inherit;height:inherit;" src="assets/no-data-to-show.png">
+                
+                          <div class="dsdfhksjaf" *ngIf="start > 4">
+                            <span class="ghtyrytr mousepoint" (click)="previousRecords()"> << Previous</span>
+                         </div>
+                        </mat-card>
+            
+                     
+                    </div>
+            </mat-step>
+            <mat-step *ngIf="userinfo?.firstname">
+                <form [formGroup]="disscussionForm" (ngSubmit)="createTopic($event)">
+                    <ng-template matStepLabel>Add Topic</ng-template>
+                    <div>
+                        <mat-card>
+                            <div class="dspFlx dvwdth">
+                                <mat-form-field appearance="outline" class="width60perc">
+                                    <mat-label>Add Topic</mat-label>
+                                    <input matInput placeholder="" formControlName="topicControl" />
+                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-error *ngIf="formControls?.topicControl?.errors">
+                                        <span *ngIf="formControls?.topicControl?.errors?.required">
+                                            Topic is Required !!!
+                                        </span>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="dspFlx dvwdth">
+                                <mat-form-field appearance="outline" class="width60perc">
+                                    <mat-label>Add description</mat-label>
+                                    <input matInput placeholder="" formControlName="discussionControl" />
+                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <mat-error *ngIf="formControls?.discussionControl?.errors">
+                                        <span *ngIf="formControls?.discussionControl?.errors?.required">
+                                            Description is Required !!!
+                                        </span>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="dspFlx dvwdth">
+                                <button type="submit" mat-raised-button class="clrbtn">Submit</button>
+                            </div>
+                        </mat-card>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</div>

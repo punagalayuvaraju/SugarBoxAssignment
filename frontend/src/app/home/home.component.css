@@ -1,0 +1,75 @@
+.position-fixed{
+    position: fixed;
+    background-color: #ff00a5;
+  }
+  .dvwdth{
+    width:100%;
+  }
+  .icnend{
+    float:right;
+    cursor: pointer;
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .width60perc{
+    width: 60%;
+  }
+  .clrbtn{
+    color: #ff00a5;
+    background-color: black;
+  }
+  .heighthome100{
+    height: 100%;
+  }
+  .topsectionheight{
+    height: calc(100% - 556px);
+  }
+  .fitHeight{
+    height: fit-content;
+  }
+  .mousepoint{
+    cursor: pointer;
+  }
+  /* //////////////////////////  table css  ////////////////////// */
+
+   
+  #deatils td,
+  #deatils th {
+      /* border: 1px solid #ddd; */
+      border-bottom:1px solid #0000003d ;
+      padding: 8px;
+  }
+  
+
+  /* #deatils tr:hover {
+      background-color:  rgba(94, 92, 92, 0);
+  } */
+  
+  #deatils th {
+      color: white;
+  }
+  
+  
+  tbody {
+      overflow: auto;
+  }
+  
+  thead,
+  tbody tr {
+      width: 100%;
+      table-layout: fixed;
+  }
+  
+
+  .tb-row{
+      /* background-color: red; */
+      border-bottom:1px solid #0000003d ;
+      height: 63px;
+  }
+
+  .trhythyt{
+      width: 95%;
+      margin-left: 24px;
+  }
+/* //////////////////////////////////////////////// */

@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.dspFlx{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.dspFlxSpaceEven{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.dspFlxstart{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.marginTop15px{
+margin-top: 15px;
+}

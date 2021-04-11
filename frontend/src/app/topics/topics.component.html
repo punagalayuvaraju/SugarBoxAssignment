@@ -1,0 +1,51 @@
+<div class="heighthome100">
+    <div class="topsectionheight">
+        <mat-toolbar class="position-fixed">
+            <div class="dvwdth">
+                <span>Topics >> {{ topics[0]?.userId?.firstname }}</span>
+                <span *ngIf="topics[0]?.userId?.firstname" (click)="logout($event)" class="icnend">
+                    <mat-icon>input</mat-icon>
+                </span>
+            </div>
+        </mat-toolbar>
+    </div>
+
+    <div class="maincss">
+        <div class="row kjgfkghj" >
+            <mat-card class="wfrwewe" *ngIf="topics?.length">
+             <div class="row" style="width: -webkit-fill-available;height: 97%;">
+                <table   class="trhythyt">
+                    <thead>
+                    <tr class="tb-row">
+                        <th class="nbnhn"><span class="fntSyl">S.no</span></th>
+                        <th class="nbnhn"><span class="fntSyl">Topic</span></th>
+                        <th class="nbnhn"><span class="fntSyl">Description</span></th>
+                        <th class="nbnhn"><span class="fntSyl">created_at</span></th>
+                    </tr>
+                    </thead>
+                <tbody id="deatils">
+                    <tr  class="tb-row hovera" *ngFor="let i of topics;let j = index">
+                        <td class="brtytr">{{j + 1}}</td>
+                        <td class="brtytr">{{i?.topic ? i?.topic : '---'}}</td>
+                        <td class="brtytr">{{i?.description ? i?.description : '---'}}</td>
+                        <td class="brtytr">{{i?.createdAt ? i?.createdAt : '---'}}</td>
+                    </tr>
+    
+                </tbody>
+                </table>
+            </div>
+    
+           
+         
+            </mat-card>
+    
+            <mat-card class="wfrwewe" *ngIf="!topics?.length"> 
+              
+              <img style="padding-top: 77px;width: inherit;height:inherit;" src="assets/no-data-to-show.png">
+    
+           
+            </mat-card>
+
+         
+        </div>
+    </div>
